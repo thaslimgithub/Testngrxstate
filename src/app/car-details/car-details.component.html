@@ -1,0 +1,44 @@
+<form [formGroup]="reactiveForm" nonvalidate> 
+    <div class="row">
+      <label class="control-label col-sm-3" for="ownName">Owner Name:</label>
+      <div class="col-sm-5">
+        <input type="text" 
+          formControlName = "ownName"
+          required
+          class="form-control">
+      </div>
+    </div>
+    <div class="row">
+        <label class="control-label col-sm-3" for="carName">Car Name:</label>
+        <div class="col-sm-5">
+          <input type="text" 
+          formControlName = "carName"
+          required 
+          class="form-control">
+        </div>
+      </div>
+    <div class="row">
+        <label class="control-label col-sm-3" for="numPlate">Number plate:</label>
+        <div class="col-sm-5">
+          <input type="text" 
+          formControlName = "numPlate"
+          required
+          class="form-control"> 
+        </div>
+      </div>
+      <button class="btn btn-primary"
+          type="button" (click)="updatecardetails()">
+          update
+        </button>
+        <button class="btn btn-default"
+          type="button"
+          (click)="addcardetails()"
+          >Add new</button>
+      </form>
+     <!-- <hr /> -->
+     <li class="list-group-item">
+        <!-- <button class="btn btn-xs btn-danger pull-right" 
+        (click)="deleteCardetails()">
+          delete
+        </button> -->
+      </li>
