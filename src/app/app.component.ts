@@ -19,8 +19,4 @@ export class AppComponent {
   addcardetails() {
     !this.showAddBtn ? this.showAddBtn = true : this.showAddBtn = false;
   }
-
-  viewAll() {
-    this.appservice.getcarDetails();
-  }
 }

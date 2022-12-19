@@ -5,6 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
+import { EffectsModule } from '@ngrx/effects';
+import { CarEffect } from './shared/car.effect';
+import { StoreModule } from '@ngrx/store';
+import { appReducer, carReducer } from './shared/car.reducer';
 
 @NgModule({
   imports: [
@@ -12,12 +16,17 @@ import { CarDetailsComponent } from './car-details/car-details.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EffectsModule.forRoot([CarEffect]),
+    StoreModule.forFeature('mycar', carReducer),
+    StoreModule.forRoot({ 'appState': appReducer }),
+    
   ],
   declarations: [
     AppComponent,
     CarDetailsComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [HttpClientModule]
 })
 export class AppModule { }
